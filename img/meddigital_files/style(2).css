@@ -1,0 +1,47 @@
+/*
+ Theme Name:     Michigan
+ Theme URI:      http://webnus.biz/themes/michigan
+ Description:    Michigan Child Theme
+ Author:         WEBNUS
+ Author URI:     http://themeforest.net/user/WEBNUS
+ Template:       michigan
+ Version:        3.2.0
+*/
+
+
+/* Theme customization starts here
+-------------------------------------------------------------- */
+
+#kedney_transplant_coms .vc_column-inner {
+    border-radius: 10px;
+    border-right: 0 !important;
+}
+.tp-parallax-wrap .tp-caption img{border-radius: 10px}
+#kedney_transplant_coms{
+	z-index:1;
+}
+#kedney_transplant_coms:before{
+	top: 20px;
+    left: 20px;
+    content: '';
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    position: absolute;
+    background: url('https://cmsnepal.edu.np/wp-content/uploads/2022/02/stripes-img-bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.coms_management_options_teja a i{
+    background: linear-gradient(45deg, #3b5998, #006aff);
+    border: 8px solid #f0f2f4;
+    color: #f0f2f4 !important;
+    width: 85px;
+    height: 85px;
+    line-height: 65px;
+    border-radius: 100px;
+    font-size: 30px;
+}
+.blox{
+	background-image: url('https://cmsnepal.edu.np/wp-content/uploads/2022/02/home-about-background.png');
+}
