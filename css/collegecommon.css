@@ -91,6 +91,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* Typography */
@@ -175,11 +178,13 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
+    max-width: 100vw;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all var(--transition-normal);
     border-bottom: 1px solid var(--gray-200);
+    
 }
 
 .header.scrolled {
@@ -270,6 +275,11 @@ p {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
+    z-index: 1100;
+    position: absolute;
+    right: var(--spacing-lg);
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .hamburger span {
@@ -574,6 +584,8 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-3xl);
     align-items: center;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .about-intro {
@@ -633,13 +645,17 @@ section {
 
 .about-image {
     position: relative;
-    
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
 }
 
 .about-image iframe {
-    width: 70wh;
-    height: 70vh;
-    border-radius: var(--radius-2xl);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl); 
     border: 10px solid #047857;
 }
@@ -1687,22 +1703,23 @@ section {
     backdrop-filter: blur(5px);
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 .modal-content {
     background: var(--white);
-    margin: 2% auto;
+    margin: 5% auto;
     padding: var(--spacing-2xl);
-    border-radius: var(--radius-2xl);
-    width: 90%;
-    max-width: 550px;
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 90vw;
     max-height: 80vh;
     overflow-y: auto;
+    overflow: hidden;
     max-height: 85vh;
-    overflow-y: auto;
     position: relative;
     animation: modalSlideIn 0.3s ease;
-    box-shadow: var(--shadow-2xl);
+    box-shadow: var(--shadow-xl);
     border: 2px solid var(--primary-color);
     display: block;
     left: 50%;
@@ -2172,6 +2189,7 @@ section {
     }
     
     .nav-menu {
+        
         position: fixed;
         left: -100%;
         top: 70px;
@@ -2184,7 +2202,22 @@ section {
         padding: var(--spacing-2xl) 0;
         gap: var(--spacing-lg);
     }
-    
+    .modal-content {
+        max-width: 95vw;
+        margin: 10% auto;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    .about-image {
+        padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+    }
+    .about-text, .about-image {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
     .nav-menu.active {
         left: 0;
     }

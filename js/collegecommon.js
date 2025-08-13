@@ -71,6 +71,9 @@ function openModal(modalType) {
         case 'video':
             showVideoModal();
             return;
+        case 'welcome':
+            modalId = 'welcomeModal';
+            break;
         default:
             return;
     }
@@ -83,6 +86,9 @@ function openModal(modalType) {
         document.body.style.overflow = 'hidden';
 
         modal.style.display = 'block';
+        if (modalId === 'welcomeModal') {
+            generateCaptcha();
+        }
     }
 }
 
@@ -91,8 +97,11 @@ function closeModal(modalId) {
     if (modal) {
         modal.style.display = 'none';
         // Restore scrollbar and remove padding
-        document.body.style.paddingRight = '';
+        document.body.style.marginRight = '0';
+        document.body.style.paddingRight = '0';
         document.body.style.overflow = 'auto';
+        document.body.style.width = '100%';
+        document.documentElement.style.overflowX = 'hidden';
     }
 }
 
@@ -101,6 +110,10 @@ window.addEventListener('click', function(event) {
     if (event.target.classList.contains('modal')) {
         event.target.style.display = 'none';
         document.body.style.overflow = 'auto';
+        document.body.style.paddingRight = '0';
+        document.body.style.marginRight = '0';
+        document.body.style.width = '100%';
+        document.documentElement.style.overflowX = 'hidden';
     }
 });
 
