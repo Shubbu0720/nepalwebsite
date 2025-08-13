@@ -630,7 +630,7 @@ section {
 }
 
 .about-image iframe {
-    width: 100%;
+    width: 70wh;
     height: 70vh;
     border-radius: var(--radius-2xl);
     box-shadow: var(--shadow-xl); 
@@ -1087,12 +1087,14 @@ section {
     display: flex;
     align-items: center;
     gap: var(--spacing-2xl);
+    /* width: 100% !important; */
     width: fit-content;
     margin: 0 auto !important;
-    justify-content: center !important;
-    margin: var(--spacing-2xl) auto;
+    justify-content: center important;
+    margin: var(--spacing-2xl) 0;
     padding: var(--spacing-2xl);
     background: var(--white);
+    left: 50%; transform: translateX(-50%);
     border-radius: var(--radius-2xl);
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-normal);
@@ -1114,7 +1116,7 @@ section {
 
 .documents-image img {
     width: 100%;
-    height: auto;
+    height: 5%;
     object-fit: cover;
     transition: transform var(--transition-slow);
     border-radius: var(--radius-xl);
@@ -1291,6 +1293,28 @@ section {
         transform: translateY(0);
     }
 }
+
+/* Responsive Design for Documents Section */
+@media (max-width: 768px) {
+    .documents-section {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-lg);
+    }
+    
+    .documents-image {
+        min-height: 200px;
+    }
+    
+    .documents-required {
+        animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .documents-required li {
+        animation: slideInFromLeft 0.4s ease-out forwards;
+    }
+}
+
 
 /* Facilities Section */
 .facilities-section {
@@ -2044,6 +2068,52 @@ section {
     100% { text-shadow: 0 0 20px rgba(5, 150, 105, 0.6), 0 0 30px rgba(245, 158, 11, 0.4); }
 }
 
+/* Mobile Responsive for Welcome Modal */
+@media (max-width: 768px) {
+    .welcome-modal-content {
+        width: 90%;
+        max-width: 400px;
+        max-height: 75vh;
+        padding: 1.2rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .welcome-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .welcome-form {
+        padding: 0.8rem;
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-modal-content {
+        width: 95%;
+        max-width: 350px;
+        max-height: 80vh;
+        padding: 1rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .welcome-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .welcome-submit-btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+    
+    .welcome-form {
+        max-height: 55vh;
+        padding: 0.7rem;
+    }
+}
+
 /* Animations */
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -2125,11 +2195,6 @@ section {
         justify-content: center;
     }
     
-    .form-row1 {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-    
     .form-row {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
@@ -2137,10 +2202,7 @@ section {
     
     .form-group input,
     .form-group select,
-    .form-group textarea,
-    .form-group1 input,
-    .form-group1 select,
-    .form-group1 textarea {
+    .form-group textarea {
         font-size: 0.85rem;
         padding: var(--spacing-sm) var(--spacing-md);
     }
@@ -2161,55 +2223,6 @@ section {
     .fee-table th,
     .fee-table td {
         padding: var(--spacing-sm);
-    }
-    
-    .fees-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .documents-section {
-        flex-direction: column;
-        gap: var(--spacing-lg);
-        padding: var(--spacing-lg);
-        width: 100%;
-    }
-    
-    .documents-image {
-        min-height: 200px;
-    }
-    
-    .documents-required {
-        animation: fadeInUp 0.8s ease-out;
-    }
-    
-    .documents-required li {
-        animation: slideInFromLeft 0.4s ease-out forwards;
-    }
-    
-    .facilities-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .about-image iframe {
-        height: 40vh;
-    }
-    
-    .welcome-modal-content {
-        width: 90%;
-        max-width: 400px;
-        max-height: 75vh;
-        padding: 1.2rem;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    
-    .welcome-header h2 {
-        font-size: 1.4rem;
-    }
-    
-    .welcome-form {
-        padding: 0.8rem;
-        max-height: 50vh;
     }
 }
 
@@ -2250,10 +2263,7 @@ section {
     
     .form-group input,
     .form-group select,
-    .form-group textarea,
-    .form-group1 input,
-    .form-group1 select,
-    .form-group1 textarea {
+    .form-group textarea {
         font-size: 0.8rem;
         padding: var(--spacing-sm);
     }
@@ -2273,28 +2283,5 @@ section {
     
     .fees-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .welcome-modal-content {
-        width: 95%;
-        max-width: 350px;
-        max-height: 80vh;
-        padding: 1rem;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    
-    .welcome-header h2 {
-        font-size: 1.2rem;
-    }
-    
-    .welcome-submit-btn {
-        font-size: 0.9rem;
-        padding: 0.7rem 1.2rem;
-    }
-    
-    .welcome-form {
-        max-height: 55vh;
-        padding: 0.7rem;
     }
 }
