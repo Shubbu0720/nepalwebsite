@@ -468,10 +468,14 @@ p {
 /* hero contact form */
 
 .contact-form-container1 {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-xl);
     background-color: rgba(0, 0, 0, 0.151);
     background-blend-mode: multiply;
-    border-radius: var(--radius-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .form-header1 {
@@ -501,6 +505,8 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .form-group1 {
@@ -1450,7 +1456,9 @@ section {
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-3xl);
+    gap: var(--spacing-2xl);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .contact-info {
@@ -1462,11 +1470,15 @@ section {
 .contact-card {
     display: flex;
     align-items: flex-start;
-    gap: var(--spacing-lg);
-    padding: var(--spacing-2xl);
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
     background: var(--gray-50);
     border-radius: var(--radius-lg);
     transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    overflow-x: hidden;
+    /* Allow content to wrap if needed */
 }
 
 .contact-card:hover {
@@ -1501,8 +1513,12 @@ section {
 
 .contact-form-container {
     background: var(--gray-50);
-    padding: var(--spacing-2xl);
-    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .form-header {
@@ -1530,7 +1546,9 @@ section {
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .form-group {
@@ -2184,6 +2202,9 @@ section {
 }
 
 @media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
     .hamburger {
         display: flex;
     }
@@ -2201,6 +2222,12 @@ section {
         box-shadow: var(--shadow-lg);
         padding: var(--spacing-2xl) 0;
         gap: var(--spacing-lg);
+    }
+
+    .form-row, .form-row1, .welcome-form .form-row {
+        grid-template-columns: 1fr;
+        width: 100%;
+        overflow-x: hidden;
     }
     .modal-content {
         max-width: 95vw;
@@ -2221,9 +2248,22 @@ section {
     .nav-menu.active {
         left: 0;
     }
-    
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    .contact-form-container, .contact-form-container1, .contact-info {
+        max-width: 100%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .hero-stats {
